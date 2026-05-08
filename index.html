@@ -4,68 +4,129 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Гибкость Reveal.js — демо</title>
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css">
-    <link rel="stylesheet" href="dist/plugin/highlight/monokai.css">
+    
+    <!-- Подключаем стили из интернета (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+    <style>
+        .fragment.blur {
+            filter: blur(5px);
+        }
+        .fragment.blur.visible {
+            filter: none;
+        }
+    </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-                     
-			<section data-background="original.jpg" data-background-size="cover">
-    			<p style="color: white; background: rgba(0,0,0,0.5); display: inline-block; padding: 10px;">
-        			картинка на фоне
-    			</p>
-			</section>
+            
+            <section data-background="original.jpg" data-background-size="cover">
+                <p style="color: white; background: rgba(0,0,0,0.5); display: inline-block; padding: 10px;">
+                    картинка на фоне
+                </p>
+            </section>
 
-			<section data-transition="zoom">
-  				<h2>This slide will override the presentation transition and zoom!</h2>
-			</section>
-			
-<section>
-  <pre><code data-trim data-noescape>
+            <section data-transition="zoom">
+                <h2>Слайд с эффектом zoom!</h2>
+            </section>
+            
+            <section>
+                <pre><code data-trim data-noescape>
 (def lazy-fib
   (concat
    [0 1]
    ((fn rfib [a b]
         (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-  </code></pre>
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>The Lorenz Equations</h2>
+                \[
+                \begin{aligned} 
+                \dot{x} & = \sigma(y-x) \\ 
+                \dot{y} & = \rho x - y - xz \\ 
+                \dot{z} & = -\beta z + xy 
+                \end{aligned} 
+                \]
+            </section>
+
+            <section>Горизонталь </section>
+                <section>
+                    <section>Вертикаль 1</section>
+                    <section>Делается за счет вложености</section>
+                </section>
+
+                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
+                    <h2>Надо читать доки там очень много разных</h2>
+                </section>
+
+                <section data-background-video="image.mp4"
+                data-background-video-loop>
+                    <h2>И так тоже можно</h2>
+                </section>
+
+    
+                <section>
+                    <p class="fragment custom blur">One</p>
+                    <p class="fragment custom blur">Two</p>
+                    <p class="fragment custom blur">Three</p>
+                </section>
+                
+                <section>
+                    <p class="fragment fade-out">это</p>
+                    <p class="fragment highlight-red">вабще</p>
+                    <p class="fragment fade-in-then-out">нереально</p>
+                    <p class="fragment fade-up">круто</p>
+                </section>
+
+                <section data-auto-animate>
+                    <h1>Auto-Animate</h1>
+                </section>
+
+                <section data-auto-animate>
+                    <h1 style="margin-top: 100px; color: red;">Auto-Animate</h1>
+                </section>
+
+                <section data-auto-animate>
+  <h1>Подвижные</h1>
+</section>
+<section data-auto-animate>
+  <h1>Подвижные</h1>
+  <h1>вложеность</h1>
 </section>
 
-<section>
-  <h2>The Lorenz Equations</h2>
-  \[\begin{aligned} \dot{x} &amp; = \sigma(y-x) \\ \dot{y} &amp; = \rho x - y -
-  xz \\ \dot{z} &amp; = -\beta z + xy \end{aligned} \]
-</section>
-
-			<section>
-				<p> Конец </p>
-			</section>
+            <section>
+                <p>Конец</p>
+            </section>
         </div>
     </div>
 
-    <script src="dist/reveal.js"></script>
-    <script src="dist/plugin/notes.js"></script>
-    <script src="dist/plugin/markdown.js"></script>
-    <script src="dist/plugin/highlight.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+    <!-- Подключаем скрипты из интернета (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+
     <script>
         Reveal.initialize({
             hash: true,
             slideNumber: true,
             transitionSpeed: 'default',
             backgroundTransition: 'fade',
-			katex: {
-            version: 'latest',
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        },
-			plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, , RevealMath.KaTeX]
+            katex: {
+                version: 'latest',
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ]
+            },
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
         });
     </script>
 </body>
