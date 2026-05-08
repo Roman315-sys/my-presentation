@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Гибкость Reveal.js — демо</title>
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css">
-    <link rel="stylesheet" href="dist/plugin/highlight/monokai.css">
+    
+    <!-- Подключаем стили из интернета (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
     <style>
-        /* Небольшой трюк для принудительного стиля (глобально) */
-        .custom-text {
-            text-shadow: 2px 2px 4px #000000;
+        .fragment.blur {
+            filter: blur(5px);
+        }
+        .fragment.blur.visible {
+            filter: none;
         }
     </style>
 </head>
@@ -18,133 +22,111 @@
     <div class="reveal">
         <div class="slides">
             
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 1: глобальный фон (взялся из темы black.css)    -->
-            <!-- ==================================================== -->
+            <section data-background="original.jpg" data-background-size="cover">
+                <p style="color: white; background: rgba(0,0,0,0.5); display: inline-block; padding: 10px;">
+                    картинка на фоне
+                </p>
+            </section>
+
+            <section data-transition="zoom">
+                <h2>Слайд с эффектом zoom!</h2>
+            </section>
+            
             <section>
-                <h1 class="custom-text">Reveal.js</h1>
-                <p>Один инструмент — безграничные возможности</p>
-                <br>
-                <small>➡️ Листай дальше, смотри, как меняется каждый слайд</small>
+                <pre><code data-trim data-noescape>
+(def lazy-fib
+  (concat
+   [0 1]
+   ((fn rfib [a b]
+        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+                </code></pre>
             </section>
 
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 2: фон — сплошной цвет, анимация появления — fade -->
-            <!-- ==================================================== -->
-            <section data-background="#ff6b6b" data-transition="fade">
-                <h2>🎨 Сплошная заливка</h2>
-                <p>Каждый слайд может быть своего цвета</p>
-                <pre><code data-trim><section data-background="#ff6b6b" data-transition="fade">
-    ...
-</section></code></pre>
+            <section>
+                <h2>The Lorenz Equations</h2>
+                \[
+                \begin{aligned} 
+                \dot{x} & = \sigma(y-x) \\ 
+                \dot{y} & = \rho x - y - xz \\ 
+                \dot{z} & = -\beta z + xy 
+                \end{aligned} 
+                \]
             </section>
 
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 3: фон — градиент, появление — convex         -->
-            <!-- ==================================================== -->
-            <section data-background="linear-gradient(45deg, #4ecdc4, #1e6f5c)" data-transition="convex">
-                <h2>🌈 Градиентный фон</h2>
-                <p>Можно задать любой CSS gradient</p>
-                <p class="fragment">✨ Фрагменты работают и поверх градиента</p>
-            </section>
-
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 4: фон — картинка из интернета, появление — zoom -->
-            <!-- ==================================================== -->
-            <section data-background-image="https://images.unsplash.com/photo-1451187580459-43490279c0fa" data-background-size="cover" data-transition="zoom">
-                <h2>🛸 Космический фон</h2>
-                <p>Картинка на весь слайд</p>
-                <br>
-                <small>Изображение с Unsplash</small>
-            </section>
-
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 5: видео на фоне (пример рабочего видео)        -->
-            <!-- ==================================================== -->
-            <section data-background-video="https://cdn.pixabay.com/video/2024/03/11/203682-921239476_large.mp4" data-background-video-loop="true" data-background-video-muted="true" data-background-size="cover">
-                <h2>📹 Видео на фоне</h2>
-                <p>Фон может быть движущимся</p>
-                <p class="fragment">🔥 Эффектно, но не отвлекает</p>
-            </section>
-
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 6: вертикальная структура (вложенные)           -->
-            <!-- ==================================================== -->
-            <section data-background="#2c3e50" data-transition="slide">
-                <section data-background="#34495e">
-                    <h2>📌 Вертикальные слайды</h2>
-                    <p>Это горизонтальный раздел</p>
-                    <small>⬇️ Нажми ↓, чтобы увидеть вложенные</small>
+            <section>Горизонталь </section>
+                <section>
+                    <section>Вертикаль 1</section>
+                    <section>Делается за счет вложености</section>
                 </section>
-                <section data-background="#2c3e50" data-background-image="https://images.unsplash.com/photo-1516116216624-53e697cbe9f4?q=80&w=1200" data-background-size="cover">
-                    <h3>Первый вложенный</h3>
-                    <p>Внутри одного горизонтального слайда</p>
+
+                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
+                    <h2>Надо читать доки там очень много разных</h2>
                 </section>
-                <section data-background="#1a252f">
-                    <h3>Второй вложенный</h3>
-                    <p>Свой фон, своя атмосфера</p>
-                    <p class="fragment">⬆️ Нажми ↑, чтобы вернуться</p>
+
+                <section data-background-video="image.mp4"
+                data-background-video-loop>
+                    <h2>И так тоже можно</h2>
                 </section>
-            </section>
 
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 7: анимация элементов (фрагменты)               -->
-            <!-- ==================================================== -->
-            <section data-background="#6c5ce7" data-transition="concave">
-                <h2>🎭 Поэтапное появление</h2>
-                <ul>
-                    <li class="fragment">🔹 Сначала появляется это</li>
-                    <li class="fragment">🔸 Потом это</li>
-                    <li class="fragment">🔹 И только потом — это</li>
-                </ul>
-                <p class="fragment fade-up">⬆️ С анимацией сверху</p>
-                <p class="fragment fade-down">⬇️ С анимацией снизу</p>
-            </section>
+    
+                <section>
+                    <p class="fragment custom blur">One</p>
+                    <p class="fragment custom blur">Two</p>
+                    <p class="fragment custom blur">Three</p>
+                </section>
+                
+                <section>
+                    <p class="fragment fade-out">это</p>
+                    <p class="fragment highlight-red">вабще</p>
+                    <p class="fragment fade-in-then-out">нереально</p>
+                    <p class="fragment fade-up">круто</p>
+                </section>
 
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 8: прозрачный фон (наложение на картинку)       -->
-            <!-- ==================================================== -->
-            <section data-background-image="https://images.unsplash.com/photo-1552082918-6386d4c88e06" data-background-size="cover" data-background-opacity="0.2">
-                <h2>👻 Полупрозрачный фон</h2>
-                <p>Картинка слабо видна, но создаёт настроение</p>
-                <pre><code>data-background-opacity="0.2"</code></pre>
-            </section>
+                <section data-auto-animate>
+                    <h1>Auto-Animate</h1>
+                </section>
 
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 9: разный размер шрифта через собственный CSS  -->
-            <!-- ==================================================== -->
-            <section data-background="#fff" data-background-transition="zoom">
-                <h2 style="color: #000; font-size: 2.5rem;">🎨 Свой стиль внутри</h2>
-                <p style="color: #333;">Можно обойтись без глобальных настроек</p>
-                <code style="background: #eee; padding: 0.2rem 0.5rem;">style="color: #000;"</code>
-            </section>
+                <section data-auto-animate>
+                    <h1 style="margin-top: 100px; color: red;">Auto-Animate</h1>
+                </section>
 
-            <!-- ==================================================== -->
-            <!-- СЛАЙД 10: финальный, с отсылкой                       -->
-            <!-- ==================================================== -->
-            <section data-background="#111" data-transition="fade">
-                <h2>🚀 Итог</h2>
-                <p>Глобальные настройки — основа,</p>
-                <p>Локальные — индивидуальность каждого слайда.</p>
-                <br>
-                <p class="fragment">💡 А теперь попробуй сам(а) изменить любой фон или цвет!</p>
-            </section>
+                <section data-auto-animate>
+  <h1>Подвижные</h1>
+</section>
+<section data-auto-animate>
+  <h1>Подвижные</h1>
+  <h1>вложеность</h1>
+</section>
 
+            <section>
+                <p>Конец</p>
+            </section>
         </div>
     </div>
 
-    <script src="dist/reveal.js"></script>
-    <script src="dist/plugin/notes.js"></script>
-    <script src="dist/plugin/markdown.js"></script>
-    <script src="dist/plugin/highlight.js"></script>
+    <!-- Подключаем скрипты из интернета (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+
     <script>
         Reveal.initialize({
             hash: true,
             slideNumber: true,
-            transition: 'slide',       // глобально — slide, но слайды могут сами выбрать
             transitionSpeed: 'default',
             backgroundTransition: 'fade',
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            katex: {
+                version: 'latest',
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ]
+            },
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
         });
     </script>
 </body>
