@@ -21,86 +21,171 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            
-            <section data-background="original.jpg" data-background-size="cover">
-                <p style="color: white; background: rgba(0,0,0,0.5); display: inline-block; padding: 10px;">
-                    картинка на фоне
-                </p>
-            </section>
-
-            <section data-transition="zoom">
-                <h2>Слайд с эффектом zoom!</h2>
-            </section>
-            
-            <section>
-                <pre><code data-trim data-noescape>
-(def lazy-fib
-  (concat
-   [0 1]
-   ((fn rfib [a b]
-        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-                </code></pre>
-            </section>
-
-            <section>
-                <h2>The Lorenz Equations</h2>
-                \[
-                \begin{aligned} 
-                \dot{x} & = \sigma(y-x) \\ 
-                \dot{y} & = \rho x - y - xz \\ 
-                \dot{z} & = -\beta z + xy 
-                \end{aligned} 
-                \]
-            </section>
-
-            <section>Горизонталь </section>
-                <section>
-                    <section>Вертикаль 1</section>
-                    <section>Делается за счет вложености</section>
+                <section data-background="3_1.jpg" data-background-size="cover">
+                    <div class="r-stack">
+                        <p style="margin-top: -200px; 
+                            margin-left: 0px;
+                            text-align: center;
+                            color: #71670d; 
+                            font-size: 1.5em; 
+                            font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(195, 4, 4, 0.9);">
+                            Спорт высоких достижений!!!
+                        </p>
+                    </div>
                 </section>
 
-                <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
-                    <h2>Надо читать доки там очень много разных</h2>
+                <section data-background="3_1.jpg" data-background-size="cover">
+                    <div class="r-stack">
+
+                        <!-- Заголовок -->
+                        <p style="margin-top: 60px; 
+                            text-align: center; 
+                            color: #ffffff; 
+                            font-size: 1.2em; 
+                            font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(0,0,0,0.9);">
+                            Требования к спортивному снаряду
+                        </p>
+
+                            <!-- Список -->
+                        <p style="margin-top: 180px; 
+                            text-align: center; 
+                            color: #ffe066; 
+                            font-size: 0.8em; 
+                            font-weight: bold; 
+                            line-height: 1.65; 
+                            text-shadow: 0 0 12px rgba(0,0,0,0.95);">
+                            1. Мобильность в перышке<br>
+                            2. Стабильность на дистанции<br>
+                            3. Комфортный вес
+                        </p>
+
+                    </div>
                 </section>
 
-                <section data-background-video="image.mp4"
-                data-background-video-loop>
-                    <h2>И так тоже можно</h2>
-                </section>
+                <section data-background="3_1.jpg" data-background-size="cover">
+                    <div class="r-stack">
 
+                        <!-- Заголовок -->
+                        <p style="margin-top: 50px; text-align: center; color: #633e3e; font-size: 1em; font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(215, 9, 9, 0.9);">
+                            Теоретические основы
+                        </p>
+                        <p style="margin-top: 280px; text-align: center; color: #ffffff; font-size: 1em; line-height: 1.7; 
+                            text-shadow: 0 0 10px rgba(0,0,0,0.9);">
     
+                            Момент инерции: 
+                            <span style="color:#ffd700;">\( J = \int r^2 \, dm \)</span><br><br>
+    
+                            Центр масс (общий): 
+                            <span style="color:#ffd700;">\( x_{цм} = \dfrac{\sum m_i x_i}{\sum m_i} \)</span><br><br>
+                        </p>
+                    </div>
+                </section>
+
+                <section data-background="3_1.jpg" data-background-size="cover">
+                    <div class="r-stack">
+
+                        <!-- Заголовок (по желанию) -->
+                        <p style="margin-top: -50px; margin-left: 0px; text-align: center; color: #633e3e; font-size: 1.2em; font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(215, 9, 9, 0.9);">
+                            Расчёт центра масс системы «палка + голова»
+                        </p>
+
+                        <p style="margin-top: 150px; margin-left: -100px; text-align: center; color: #ffffff; font-size: 1em; font-weight: bold; 
+                            text-shadow: 0 0 12px rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; gap: 25px;">
+    
+                            <span>Центр масс системы:</span>
+    
+                            <span style="color:#ffd700; font-size: 0.8em;">
+                                $$ x_{цм} = \frac{m_п \cdot x_{цм.палки} + m_ш \cdot (L + r)}{m_п + m_ш} $$
+                            </span>
+                        </p>
+                    </div>
+                </section>
+
                 <section>
-                    <p class="fragment custom blur">One</p>
-                    <p class="fragment custom blur">Two</p>
-                    <p class="fragment custom blur">Three</p>
-                </section>
-                
-                <section>
-                    <p class="fragment fade-out">это</p>
-                    <p class="fragment highlight-red">вабще</p>
-                    <p class="fragment fade-in-then-out">нереально</p>
-                    <p class="fragment fade-up">круто</p>
+                    <div class="r-stack">
+                        <p style="margin-top: -170px; margin-left: 0px; text-align: center; color: #633e3e; font-size: 0.5em; font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(215, 9, 9, 0.9);">
+                            Начнем с самого простого и очевидного, центр масс совпадает с осью вращения!  
+                            <img src="s_1.png" class="absolute"
+                            style="top: 0px; left: 0px; width: 300px; 
+                            border-radius: 15px; box-shadow: 0 0 30px rgba(0,0,0,0.8);">
+                        </p>
+                        <span style="color:#ffd700; font-size: 0.8em;">Этого можно добится за счет:</span>
+                        <p style="margin-top: 180px; 
+                            text-align: center; 
+                            color: #ffe066; 
+                            font-size: 0.8em; 
+                            font-weight: bold; 
+                            line-height: 1.65; 
+                            text-shadow: 0 0 12px rgba(0,0,0,0.95);">
+                            1. Увеличения масса головы!<br>
+                            2. Неоднородного распределения мас шеста!<br>
+                        </p>
+                    </div>
                 </section>
 
-                <section data-auto-animate>
-                    <h1>Auto-Animate</h1>
+                <section data-background="3_1.jpg" data-background-size="cover">
+                    <div class="r-stack">
+
+                        <!-- Заголовок -->
+                        <p style="margin-top: 40px; text-align: center; color: #ffffff; font-size: 0.7em; font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(0,0,0,0.9);">
+                            Почему увеличение массы головы — <span style="color:#ff4444;">не лучшее решение</span>
+                        </p>
+
+                            <!-- Основные причины -->
+                        <p style="margin-top: 130px; text-align: left; color: #ffffff; font-size: 0.5em; font-weight: bold; 
+                            line-height: 1.65; text-shadow: 0 0 12px rgba(0,0,0,0.95); max-width: 1100px; margin-left: auto; margin-right: auto;">
+            
+                            1.<span style="color:#ffd700;">Резко увеличивает момент инерции: J = m·r² — масса далеко от оси вращения</span><br>
+            
+                            2.<span style="color:#ffd700;">Усиливает эффект «хлыста»: Сильные колебания конца палки после прыжка</span><br>
+            
+                            3. <span style="color:#ffd700;">Снижает собственные частоты колебаний: Палка начинает «болтаться»</span><br>
+            
+                            4. <span style="color:#ffd700;">Отодвигает центр масс далеко от руки: Ухудшает управляемость и точность</span><br>
+            
+                            5. <span style="color:#ffd700;">Сильно повышает нагрузку на спортсмена</span>
+                        </p>
+
+                    </div>
                 </section>
 
-                <section data-auto-animate>
-                    <h1 style="margin-top: 100px; color: red;">Auto-Animate</h1>
+                <section data-background="3_1.jpg" data-background-size="cover">
+                    <div>
+
+                        <p style="margin-top: -10px; text-align: center; color: #ffffff; font-size: 1em; font-weight: bold; 
+                            text-shadow: 0 0 15px rgba(0,0,0,0.9);">
+                            Момент инерции системы «палка + шар»
+                        </p><br>
+
+                        <!-- Основная формула -->
+                        <p style="margin-top: -40px; text-align: center; color: #ffd700; font-size: 0.7em; line-height: 1.8; 
+                            text-shadow: 0 0 12px rgba(0,0,0,0.9);">
+                             $$ J_{\text{общий}} = \int_{0}^{L} (x - d)^2 \chi(x) \, dx + m_{\text{ш}} \cdot (L - d + r)^2 $$
+                        </p><br>
+
+                        <p style="margin-top: -70px; text-align: center; color: #ffffff; font-size: 0.7em; line-height: 1.7;">
+            
+                            $$ J_{\text{палки}} = \int_{0}^{L} (x - d)^2 \chi(x) \, dx $$
+                        </p><br>
+                        <p style="margin-top: -70px; text-align: center; color: #ffffff; font-size: 0.7em; line-height: 1.7;">
+                            $$ J_{\text{палки}} = I_0 - 2d \cdot m_{\text{п}} x_{\text{цм}} + d^2 m_{\text{п}} $$
+                        </p><br>
+
+                        <p style="margin-top: -50px; text-align: center; color: #ffdd88; font-size: 0.7em;">
+                            где<br>
+                            <span style="color:#ffffff;">\( d \) — расстояние от начала палки до точки хвата</span><br>
+                            <span style="color:#ffffff;">\( \chi(x) \) — переменная линейная плотность</span>
+                        </p>
+
+                    </div>
                 </section>
 
-                <section data-auto-animate>
-  <h1>Подвижные</h1>
-</section>
-<section data-auto-animate>
-  <h1>Подвижные</h1>
-  <h1>вложеность</h1>
-</section>
-
-            <section>
-                <p>Конец</p>
-            </section>
         </div>
     </div>
 

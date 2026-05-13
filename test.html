@@ -1,12 +1,145 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Тест подсказок</title>
-</head>
-<body>
-    <p><abbr title="Professor">Prof</abbr> Stephen Hawking — физик.
-    <img src="C:\Users\user\Pictures\Screenshots\Снимок экрана 2025-12-27 100407.png" 
-    alt="A family of quokka">
-	</p>
-</body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/black.css" />
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+
+		<style>
+    		.corner-image {
+        	position: absolute;
+        	top: 350px;
+        	right: 500px;
+        	width: 300px;  
+        	height: auto;
+			transform: rotateY(30deg) rotateX(10deg) translateZ(100px);
+    		}
+		</style>
+	</head>
+	<body>git add .
+		<div class="reveal">
+			<div class="slides">
+				<section>
+    				<p>E=MC<sup>2</sup> </p>
+					<p>Venus is the only planet that rotates
+ 						clockwise.</p>
+							<hr />
+						<p>Jupiter is bigger than all the other planets </p>
+						<p><b>так выделять</b></p>
+						<p><strong> или так. ХЗ в чем разница</strong></p>
+						<p><strong> <em>или так.</em> курсивчик подьехал</strong></p>
+						<p> важно уметь вставлять цитаты примера не будет в книге страница 52 </p>
+				</section>
+				<section>
+					<h>Усложняем</h>
+					<p><abbr title="Professor">Prof</abbr> Stephen Hawking — физик.</p>
+					<p>бля это не работает как должно надо пофиксить конструкция крайне важная</p>
+					<address>
+					<p><a href="mailto:homer@example.org">
+ 					homer@example.org</a></p>
+					</address>
+					<p>It was the <del>worst</del> <ins>best</ins> idea
+ 					she had </p>
+					<p>Laptop computer:</p>
+					<p><s>Was $995</s></p>
+					<p>Now only $375</p>
+				</section>
+				<section>
+					<h>Форматирование текста</h>
+					<ol>
+						<li>можно точечки замени в коде ol на ul</li>
+						<li>Simmer in salted water for 15-20
+ 							minutes until tender</li>
+						<li>Heat milk, butter and nutmeg</li>
+					</ol>
+					<dl>
+   						<dt>КЭД</dt>
+    					<dd>Квантовая электродинамика — теория, описывающая взаимодействие заряженных частиц с электромагнитным полем.</dd>
+						<p>смотри как работает в коде</p>
+				</section>
+				<section>
+					<ul>
+						<li>Mousses</li>
+						<li>Pastries
+							<ul>
+								<li>Croissant</li>
+								<li>Profiterole</li>
+							</ul>
+						</li>
+						<li>Tarts</li>
+					</ul>
+					<p>Movie Reviews:
+						<ul>
+							<li><a href="http://www.empireonline.com">Empire</a></li>
+							<li><a href="http://www.metacritic.com">Metacritic</a></li>
+						</ul>
+					</p>
+					<p> Это способ вставлять ссылки! ссылаца можно даже в нутри проекта но в контексте одного модуя
+						сделать это сложно да и я впринципе незнаю можно ли
+					</p>
+				</section>
+				<section>
+					<img src="_original картина.jpg" alt="A family of
+ 					quokka" width="600" height="400"/>
+				</section>
+				<section>
+					<img src="_original картина.jpg" 
+         			alt="A family of quokka" 
+         			class="corner-image">
+					<div style="font-size: 0.4em;">
+    				<h2>Из печального! положение картикки задается на языке си шарп. это дико не удобно еще и параметры странные</h2>
+					<p> из плюсов единственое что вас ограничивает это фантазия</p>
+					</div>
+				</section>
+				<section>
+					<figure>
+						<img src="images/otters.jpg" alt="Photograph of
+ 							two sea otters floating in water">
+							<br />
+ 							<figcaption>Sea otters hold hands when they
+ 							sleep so they don't drift away from each
+ 							other.</figcaption>
+					</figure>
+					<p>важная тема</p>
+					<p> ну вроде основы все прочитал я читал документацию 9 часов
+						там еще про таблички есть походу найду если что. 
+					</p>
+				</section>
+				<section data-background="#ffcc00">
+     				<h2>Слайд с жёлтым фоном</h2>
+				</section>
+
+				<section data-background="_original картина.jpg" data-background-size="cover">
+    				<h2>Слайд с картинкой на фоне</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="dist/plugin/notes.js"></script>
+		<script src="dist/plugin/markdown.js"></script>
+		<script src="dist/plugin/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
 </html>
